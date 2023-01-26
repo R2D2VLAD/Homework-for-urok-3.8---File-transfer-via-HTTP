@@ -1,4 +1,5 @@
 package com.example.homeworkforurok3_4webapplicationstructure.controllers;
+
 import com.example.homeworkforurok3_4webapplicationstructure.model.Recipe;
 import com.example.homeworkforurok3_4webapplicationstructure.services.impl.RecipeServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
@@ -15,13 +16,14 @@ import java.util.Collection;
 @Tag(name = "Рецепты", description = "Endpoint-ы для упраления рецептами")
 public class RecipeController {
     private final RecipeServiceImpl recipeService;
+
     public RecipeController(RecipeServiceImpl recipeService) {
         this.recipeService = recipeService;
     }
 
     @PostMapping
     @Operation(
-           summary = "Endpoint для добаления рецептов")
+            summary = "Endpoint для добаления рецептов")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -30,6 +32,7 @@ public class RecipeController {
         long id = recipeService.addRecipe(recipe);
         return ResponseEntity.ok(id);
     }
+
     @PutMapping("/{id}")
     @Operation(
             summary = "Endpoint для редактирования рецептов по id")
@@ -44,6 +47,7 @@ public class RecipeController {
         }
         return ResponseEntity.ok(recipe);
     }
+
     @DeleteMapping("/{id}")
     @Operation(
             summary = "Endpoint для удаления рецептов по id")
@@ -57,6 +61,7 @@ public class RecipeController {
         }
         return ResponseEntity.notFound().build();
     }
+
     @GetMapping("/{id}")
     @Operation(
             summary = "Endpoint для получения информации о рецепте по id")
@@ -71,6 +76,7 @@ public class RecipeController {
         }
         return ResponseEntity.ok(recipe);
     }
+
     @GetMapping
     @Operation(
             summary = "Endpoint для получения информации о всех рецептов")

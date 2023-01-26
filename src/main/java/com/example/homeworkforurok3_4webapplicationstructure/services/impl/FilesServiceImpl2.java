@@ -4,6 +4,7 @@ import com.example.homeworkforurok3_4webapplicationstructure.services.FilesServi
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -36,7 +37,8 @@ public class FilesServiceImpl2 implements FilesService2 {
         }
     }
 
-    private boolean cleanDataFile() {
+    @Override
+    public boolean cleanDataFile() {
         try {
             Path path = Path.of(dataFilePath, dataFileName);
             Files.deleteIfExists(path);
@@ -46,5 +48,10 @@ public class FilesServiceImpl2 implements FilesService2 {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public File getDataFile() {
+        return new File(dataFilePath + "/" + dataFileName);
     }
 }

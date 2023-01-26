@@ -4,7 +4,7 @@ import com.example.homeworkforurok3_4webapplicationstructure.model.Ingredient;
 
 import java.util.Collection;
 
-public interface IndredientService {
+public interface IngredientService {
 
     long addIngredient(Ingredient ingredient);
 

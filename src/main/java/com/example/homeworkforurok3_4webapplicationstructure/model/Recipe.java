@@ -1,4 +1,5 @@
 package com.example.homeworkforurok3_4webapplicationstructure.model;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,4 +15,4 @@ public class Recipe {
     List<String> ingredient = new ArrayList<>();
     List<String> cookingSteps = new ArrayList<>();
 
-    }
+}

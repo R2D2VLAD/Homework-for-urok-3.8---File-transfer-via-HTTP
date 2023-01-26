@@ -1,7 +1,7 @@
 package com.example.homeworkforurok3_4webapplicationstructure.services.impl;
 
 import com.example.homeworkforurok3_4webapplicationstructure.model.Ingredient;
-import com.example.homeworkforurok3_4webapplicationstructure.services.IndredientService;
+import com.example.homeworkforurok3_4webapplicationstructure.services.IngredientService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,15 +13,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class IngredientServiceImpl implements IndredientService {
+public class IngredientServiceImpl implements IngredientService {
 
     private final FilesServiceImpl2 filesService2;
     private static Map<Long, Ingredient> ingredientMap = new HashMap<>();
 
     public static long id = 0;
 
-    public IngredientServiceImpl(FilesServiceImpl2 filesServiceImpl2) {
-        this.filesService2 = filesServiceImpl2;
+    public IngredientServiceImpl(FilesServiceImpl2 filesService2) {
+        this.filesService2 = filesService2;
     }
 
     @PostConstruct
@@ -69,6 +69,7 @@ public class IngredientServiceImpl implements IndredientService {
         }
         return false;
     }
+
     @Override
     public Collection<Ingredient> getAllIngredient() {
         return ingredientMap.values();

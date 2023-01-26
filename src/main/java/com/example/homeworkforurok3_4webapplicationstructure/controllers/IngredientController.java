@@ -1,4 +1,5 @@
 package com.example.homeworkforurok3_4webapplicationstructure.controllers;
+
 import com.example.homeworkforurok3_4webapplicationstructure.model.Ingredient;
 import com.example.homeworkforurok3_4webapplicationstructure.services.impl.IngredientServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,6 +17,7 @@ import java.util.Collection;
 public class IngredientController {
 
     private final IngredientServiceImpl ingredientService;
+
     public IngredientController(IngredientServiceImpl ingredientService) {
         this.ingredientService = ingredientService;
     }
